@@ -1,0 +1,55 @@
+\hypertarget{grade_and_avg_calc_8h_source}{}\doxysection{grade\+And\+Avg\+Calc.\+h}
+\label{grade_and_avg_calc_8h_source}\index{E:/C++/CodeBlocks Code/Assignment Sec 2/gradeAndAvgCalc.h@{E:/C++/CodeBlocks Code/Assignment Sec 2/gradeAndAvgCalc.h}}
+\mbox{\hyperlink{grade_and_avg_calc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{22 \textcolor{keywordtype}{string} \mbox{\hyperlink{grade_and_avg_calc_8h_aa11f21f1f5dbb77e63a84f8e7d5ca091}{gradeCalc}}(\textcolor{keywordtype}{int} marks,\textcolor{keywordtype}{float} avg)\{}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \textcolor{keywordflow}{if} (marks < avg-\/15)\{}
+\DoxyCodeLine{25         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}F"{}};}
+\DoxyCodeLine{26     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(marks < avg-\/5)\{}
+\DoxyCodeLine{27         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}D"{}};}
+\DoxyCodeLine{28     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(marks >= avg-\/5 \& marks <= avg+5)\{}
+\DoxyCodeLine{29         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}C"{}};}
+\DoxyCodeLine{30     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (marks > avg+5 \& marks < avg+15)\{}
+\DoxyCodeLine{31         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}B"{}};}
+\DoxyCodeLine{32     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (marks > avg+15)\{}
+\DoxyCodeLine{33         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}A"{}};}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35 \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{44 \textcolor{keywordtype}{void} \mbox{\hyperlink{grade_and_avg_calc_8h_a5edd9c97257de61f65573f865bc1291c}{calcAvgofEach}}(\textcolor{keywordtype}{int} numOfStudent, \textcolor{keywordtype}{int} numOfSub)\{}
+\DoxyCodeLine{45     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i<numOfSub; i++)\{}
+\DoxyCodeLine{46         \textcolor{keywordtype}{int} sum = 0;}
+\DoxyCodeLine{47         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j<numOfStudent; j++)\{}
+\DoxyCodeLine{48             sum = sum + \mbox{\hyperlink{read_data_8h_acd03079ce6061ceccc06b89923a8874d}{globalArr}}[j][i];}
+\DoxyCodeLine{49         \}}
+\DoxyCodeLine{50         \textcolor{keywordtype}{float} avg = float(sum) / numOfStudent;    \textcolor{comment}{//typecast sum integer value to float to get floating average.}}
+\DoxyCodeLine{51         \mbox{\hyperlink{read_data_8h_a7495bce546dfadfe941c539ab4d4a129}{avgMarks}}[i] = avg;}
+\DoxyCodeLine{52     \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{63 \textcolor{keywordtype}{void} \mbox{\hyperlink{grade_and_avg_calc_8h_ad0ad15727a5be9fcbe8894c7f069a0c8}{displayGrades}}(\textcolor{keywordtype}{int} numOfStudent, \textcolor{keywordtype}{int} numOfSub)\{}
+\DoxyCodeLine{64     cout<<\textcolor{stringliteral}{"{}\(\backslash\)n -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Welcome to Section 2 -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<endl;}
+\DoxyCodeLine{65     cout<<\textcolor{stringliteral}{"{}\(\backslash\)n Total no. of Students : "{}}<<numOfStudent<<setw(125)<<\textcolor{stringliteral}{"{}\(\backslash\)t"{}}<<\textcolor{stringliteral}{"{}Total no. of Subjects : "{}}<<numOfSub<<endl;}
+\DoxyCodeLine{66     cout<<\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<endl;}
+\DoxyCodeLine{67     cout<<left<<setw(30)<<\textcolor{stringliteral}{"{} Name of Student "{}}<<\textcolor{stringliteral}{"{}\(\backslash\)tMarks (Grade) -\/ Marks and Grades of each exam"{}}<<endl;}
+\DoxyCodeLine{68     cout<<\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<endl;}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j =0; j<numOfStudent; j++ )\{}
+\DoxyCodeLine{71         cout<<left<<setw(30)<<\mbox{\hyperlink{read_data_8h_ac48e0770e535fe061ff17c4e81b48e62}{studentName1}}[j+1]<<\textcolor{stringliteral}{"{}\(\backslash\)t"{}};}
+\DoxyCodeLine{72         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i =0 ; i<numOfSub; i++)\{}
+\DoxyCodeLine{73             \textcolor{keywordtype}{int} marks = \mbox{\hyperlink{read_data_8h_acd03079ce6061ceccc06b89923a8874d}{globalArr}}[j][i];}
+\DoxyCodeLine{74             \textcolor{keywordtype}{float} avg = \mbox{\hyperlink{read_data_8h_a7495bce546dfadfe941c539ab4d4a129}{avgMarks}}[i];}
+\DoxyCodeLine{75             \textcolor{keywordtype}{string} grade = \mbox{\hyperlink{grade_and_avg_calc_8h_aa11f21f1f5dbb77e63a84f8e7d5ca091}{gradeCalc}}(marks,avg);            \textcolor{comment}{//  calls gradeCalc function with marks and avg to get the grade for the particular student and subject.}}
+\DoxyCodeLine{76             cout<<setw(3)<<\mbox{\hyperlink{read_data_8h_acd03079ce6061ceccc06b89923a8874d}{globalArr}}[j][i]<<\textcolor{stringliteral}{"{} ("{}}<<grade<<\textcolor{stringliteral}{"{}) "{}}<<\textcolor{stringliteral}{"{} \(\backslash\)t"{}};}
+\DoxyCodeLine{77         \}}
+\DoxyCodeLine{78         cout<<\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{79     \}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     cout<<\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<endl;}
+\DoxyCodeLine{82 \}}
+
+\end{DoxyCode}

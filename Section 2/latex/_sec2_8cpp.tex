@@ -1,0 +1,110 @@
+\hypertarget{_sec2_8cpp}{}\doxysection{E\+:/\+C++/\+Code\+Blocks Code/\+Assignment Sec 2/\+Sec2.cpp File Reference}
+\label{_sec2_8cpp}\index{E:/C++/CodeBlocks Code/Assignment Sec 2/Sec2.cpp@{E:/C++/CodeBlocks Code/Assignment Sec 2/Sec2.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$typeinfo$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_sec2_8cpp_a9f6272c58a10f8fafcf1f82e13555a76}{space\+Index}} (string s)
+\item 
+void \mbox{\hyperlink{_sec2_8cpp_a5edd9c97257de61f65573f865bc1291c}{calc\+Avgof\+Each}} (int num\+Of\+Student, int num\+Of\+Sub)
+\item 
+string \mbox{\hyperlink{_sec2_8cpp_aa11f21f1f5dbb77e63a84f8e7d5ca091}{grade\+Calc}} (int marks, float avg)
+\item 
+void \mbox{\hyperlink{_sec2_8cpp_ad0ad15727a5be9fcbe8894c7f069a0c8}{display\+Grades}} (int num\+Of\+Student, int num\+Of\+Sub)
+\item 
+void \mbox{\hyperlink{_sec2_8cpp_a4412ac8ae31d66f1bc94e387ea860876}{write\+To\+File}} (int num\+Of\+Student, int num\+Of\+Sub)
+\item 
+int \mbox{\hyperlink{_sec2_8cpp_a109f096d0e0a80ddde2e5c543d079f9b}{read\+Numof\+Sub}} (string split\+String, int flag, string \&temp\+Str, int s\+Index)
+\item 
+int \mbox{\hyperlink{_sec2_8cpp_a98cc57c0183aaf7d5abf20e9f178d5c0}{read\+Numof\+Students}} (string split\+String, int flag, string \&temp\+Str, int s\+Index)
+\item 
+int \mbox{\hyperlink{_sec2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$$\ast$ \mbox{\hyperlink{_sec2_8cpp_acd03079ce6061ceccc06b89923a8874d}{global\+Arr}}
+\item 
+float $\ast$ \mbox{\hyperlink{_sec2_8cpp_a7495bce546dfadfe941c539ab4d4a129}{avg\+Marks}}
+\item 
+std\+::vector$<$ string $>$ \mbox{\hyperlink{_sec2_8cpp_ac48e0770e535fe061ff17c4e81b48e62}{student\+Name1}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_sec2_8cpp_a5edd9c97257de61f65573f865bc1291c}\label{_sec2_8cpp_a5edd9c97257de61f65573f865bc1291c}} 
+\index{Sec2.cpp@{Sec2.cpp}!calcAvgofEach@{calcAvgofEach}}
+\index{calcAvgofEach@{calcAvgofEach}!Sec2.cpp@{Sec2.cpp}}
+\doxysubsubsection{\texorpdfstring{calcAvgofEach()}{calcAvgofEach()}}
+{\footnotesize\ttfamily void calc\+Avgof\+Each (\begin{DoxyParamCaption}\item[{int}]{num\+Of\+Student,  }\item[{int}]{num\+Of\+Sub }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_sec2_8cpp_ad0ad15727a5be9fcbe8894c7f069a0c8}\label{_sec2_8cpp_ad0ad15727a5be9fcbe8894c7f069a0c8}} 
+\index{Sec2.cpp@{Sec2.cpp}!displayGrades@{displayGrades}}
+\index{displayGrades@{displayGrades}!Sec2.cpp@{Sec2.cpp}}
+\doxysubsubsection{\texorpdfstring{displayGrades()}{displayGrades()}}
+{\footnotesize\ttfamily void display\+Grades (\begin{DoxyParamCaption}\item[{int}]{num\+Of\+Student,  }\item[{int}]{num\+Of\+Sub }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_sec2_8cpp_aa11f21f1f5dbb77e63a84f8e7d5ca091}\label{_sec2_8cpp_aa11f21f1f5dbb77e63a84f8e7d5ca091}} 
+\index{Sec2.cpp@{Sec2.cpp}!gradeCalc@{gradeCalc}}
+\index{gradeCalc@{gradeCalc}!Sec2.cpp@{Sec2.cpp}}
+\doxysubsubsection{\texorpdfstring{gradeCalc()}{gradeCalc()}}
+{\footnotesize\ttfamily string grade\+Calc (\begin{DoxyParamCaption}\item[{int}]{marks,  }\item[{float}]{avg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_sec2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_sec2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Sec2.cpp@{Sec2.cpp}!main@{main}}
+\index{main@{main}!Sec2.cpp@{Sec2.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+student\+Names = new string\mbox{[}num\+Of\+Student\mbox{]};\mbox{\Hypertarget{_sec2_8cpp_a98cc57c0183aaf7d5abf20e9f178d5c0}\label{_sec2_8cpp_a98cc57c0183aaf7d5abf20e9f178d5c0}} 
+\index{Sec2.cpp@{Sec2.cpp}!readNumofStudents@{readNumofStudents}}
+\index{readNumofStudents@{readNumofStudents}!Sec2.cpp@{Sec2.cpp}}
+\doxysubsubsection{\texorpdfstring{readNumofStudents()}{readNumofStudents()}}
+{\footnotesize\ttfamily int read\+Numof\+Students (\begin{DoxyParamCaption}\item[{string}]{split\+String,  }\item[{int}]{flag,  }\item[{string \&}]{temp\+Str,  }\item[{int}]{s\+Index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_sec2_8cpp_a109f096d0e0a80ddde2e5c543d079f9b}\label{_sec2_8cpp_a109f096d0e0a80ddde2e5c543d079f9b}} 
+\index{Sec2.cpp@{Sec2.cpp}!readNumofSub@{readNumofSub}}
+\index{readNumofSub@{readNumofSub}!Sec2.cpp@{Sec2.cpp}}
+\doxysubsubsection{\texorpdfstring{readNumofSub()}{readNumofSub()}}
+{\footnotesize\ttfamily int read\+Numof\+Sub (\begin{DoxyParamCaption}\item[{string}]{split\+String,  }\item[{int}]{flag,  }\item[{string \&}]{temp\+Str,  }\item[{int}]{s\+Index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_sec2_8cpp_a9f6272c58a10f8fafcf1f82e13555a76}\label{_sec2_8cpp_a9f6272c58a10f8fafcf1f82e13555a76}} 
+\index{Sec2.cpp@{Sec2.cpp}!spaceIndex@{spaceIndex}}
+\index{spaceIndex@{spaceIndex}!Sec2.cpp@{Sec2.cpp}}
+\doxysubsubsection{\texorpdfstring{spaceIndex()}{spaceIndex()}}
+{\footnotesize\ttfamily int space\+Index (\begin{DoxyParamCaption}\item[{string}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_sec2_8cpp_a4412ac8ae31d66f1bc94e387ea860876}\label{_sec2_8cpp_a4412ac8ae31d66f1bc94e387ea860876}} 
+\index{Sec2.cpp@{Sec2.cpp}!writeToFile@{writeToFile}}
+\index{writeToFile@{writeToFile}!Sec2.cpp@{Sec2.cpp}}
+\doxysubsubsection{\texorpdfstring{writeToFile()}{writeToFile()}}
+{\footnotesize\ttfamily void write\+To\+File (\begin{DoxyParamCaption}\item[{int}]{num\+Of\+Student,  }\item[{int}]{num\+Of\+Sub }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_sec2_8cpp_a7495bce546dfadfe941c539ab4d4a129}\label{_sec2_8cpp_a7495bce546dfadfe941c539ab4d4a129}} 
+\index{Sec2.cpp@{Sec2.cpp}!avgMarks@{avgMarks}}
+\index{avgMarks@{avgMarks}!Sec2.cpp@{Sec2.cpp}}
+\doxysubsubsection{\texorpdfstring{avgMarks}{avgMarks}}
+{\footnotesize\ttfamily float$\ast$ avg\+Marks}
+
+\mbox{\Hypertarget{_sec2_8cpp_acd03079ce6061ceccc06b89923a8874d}\label{_sec2_8cpp_acd03079ce6061ceccc06b89923a8874d}} 
+\index{Sec2.cpp@{Sec2.cpp}!globalArr@{globalArr}}
+\index{globalArr@{globalArr}!Sec2.cpp@{Sec2.cpp}}
+\doxysubsubsection{\texorpdfstring{globalArr}{globalArr}}
+{\footnotesize\ttfamily int$\ast$$\ast$ global\+Arr}
+
+\mbox{\Hypertarget{_sec2_8cpp_ac48e0770e535fe061ff17c4e81b48e62}\label{_sec2_8cpp_ac48e0770e535fe061ff17c4e81b48e62}} 
+\index{Sec2.cpp@{Sec2.cpp}!studentName1@{studentName1}}
+\index{studentName1@{studentName1}!Sec2.cpp@{Sec2.cpp}}
+\doxysubsubsection{\texorpdfstring{studentName1}{studentName1}}
+{\footnotesize\ttfamily std\+::vector$<$string$>$ student\+Name1}
+

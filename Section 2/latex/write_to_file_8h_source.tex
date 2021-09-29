@@ -1,0 +1,36 @@
+\hypertarget{write_to_file_8h_source}{}\doxysection{write\+To\+File.\+h}
+\label{write_to_file_8h_source}\index{E:/C++/CodeBlocks Code/Assignment Sec 2/writeToFile.h@{E:/C++/CodeBlocks Code/Assignment Sec 2/writeToFile.h}}
+\mbox{\hyperlink{write_to_file_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{16 \textcolor{keywordtype}{void} \mbox{\hyperlink{write_to_file_8h_a4412ac8ae31d66f1bc94e387ea860876}{writeToFile}}(\textcolor{keywordtype}{int} numOfStudent, \textcolor{keywordtype}{int} numOfSub)\{}
+\DoxyCodeLine{17     \textcolor{keywordtype}{int} flag2 = 0;}
+\DoxyCodeLine{18     ofstream outfile;}
+\DoxyCodeLine{19     outfile.open(\textcolor{stringliteral}{"{}output\_section2.txt"{}}, ios\_base::trunc);}
+\DoxyCodeLine{20     \textcolor{keywordflow}{if} (outfile.is\_open())}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22         \textcolor{keywordflow}{if} (flag2 == 0)\{}
+\DoxyCodeLine{23             outfile<<\textcolor{stringliteral}{"{}\(\backslash\)n -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Welcome to Section 2 -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<endl;}
+\DoxyCodeLine{24             outfile<<\textcolor{stringliteral}{"{}\(\backslash\)n Total no. of Students : "{}}<<numOfStudent<<setw(125)<<\textcolor{stringliteral}{"{}\(\backslash\)t"{}}<<\textcolor{stringliteral}{"{}Total no. of Subjects : "{}}<<numOfSub<<endl;}
+\DoxyCodeLine{25             outfile<<\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<endl;}
+\DoxyCodeLine{26             outfile<<left<<setw(30)<<\textcolor{stringliteral}{"{} Name of Student "{}}<<\textcolor{stringliteral}{"{}\(\backslash\)tMarks (Grade) -\/ Marks and Grades of each exam"{}}<<endl;}
+\DoxyCodeLine{27             outfile<<\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<endl;}
+\DoxyCodeLine{28             flag2++;}
+\DoxyCodeLine{29         \}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j =0; j<numOfStudent; j++ )\{}
+\DoxyCodeLine{33             outfile<<left<<setw(30)<<\mbox{\hyperlink{read_data_8h_ac48e0770e535fe061ff17c4e81b48e62}{studentName1}}[j+1]<<\textcolor{stringliteral}{"{}\(\backslash\)t"{}};}
+\DoxyCodeLine{34             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i =0 ; i<numOfSub; i++)\{}
+\DoxyCodeLine{35                 \textcolor{keywordtype}{int} marks = \mbox{\hyperlink{read_data_8h_acd03079ce6061ceccc06b89923a8874d}{globalArr}}[j][i];}
+\DoxyCodeLine{36                 \textcolor{keywordtype}{float} avg = \mbox{\hyperlink{read_data_8h_a7495bce546dfadfe941c539ab4d4a129}{avgMarks}}[i];}
+\DoxyCodeLine{37                 \textcolor{keywordtype}{string} grade = \mbox{\hyperlink{grade_and_avg_calc_8h_aa11f21f1f5dbb77e63a84f8e7d5ca091}{gradeCalc}}(marks,avg);     \textcolor{comment}{//  calls gradeCalc function with marks and avg to get the grade for the particular student and subject.}}
+\DoxyCodeLine{38                 outfile<<setw(3)<<\mbox{\hyperlink{read_data_8h_acd03079ce6061ceccc06b89923a8874d}{globalArr}}[j][i]<<\textcolor{stringliteral}{"{} ("{}}<<grade<<\textcolor{stringliteral}{"{}) "{}}<<\textcolor{stringliteral}{"{} \(\backslash\)t"{}};}
+\DoxyCodeLine{39             \}}
+\DoxyCodeLine{40             outfile<<\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{41         \}}
+\DoxyCodeLine{42         outfile<<\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<endl;}
+\DoxyCodeLine{43     \}}
+\DoxyCodeLine{44 \}}
+
+\end{DoxyCode}

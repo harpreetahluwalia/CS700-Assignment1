@@ -1,0 +1,33 @@
+\hypertarget{write_to_file_8h_source}{}\doxysection{write\+To\+File.\+h}
+\mbox{\hyperlink{write_to_file_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{11 \textcolor{keywordtype}{int} flag2 = 0;}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{23 \textcolor{keywordtype}{void} \mbox{\hyperlink{write_to_file_8h_a238c47c623f6204b91feb858fdcb016c}{writeToFile}}(\textcolor{keywordtype}{string} studentName, \textcolor{keywordtype}{int} numOfSub, std::vector <int> marksArr, \textcolor{keywordtype}{float} avgMarks, \textcolor{keywordtype}{string} grade )\{}
+\DoxyCodeLine{24     ofstream outfile;}
+\DoxyCodeLine{25     outfile.open(\textcolor{stringliteral}{"{}output\_Section1.txt"{}}, ios\_base::app);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{keywordflow}{if} (outfile.is\_open())}
+\DoxyCodeLine{28     \{}
+\DoxyCodeLine{29         \textcolor{keywordflow}{if} (flag2 == 0)\{}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31             outfile<<\textcolor{stringliteral}{"{}\(\backslash\)n -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Welcome to Section 1 -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<endl;}
+\DoxyCodeLine{32             outfile<<\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<endl;}
+\DoxyCodeLine{33             outfile << left << setw(25) << \textcolor{stringliteral}{"{} Name"{}} << setw(15) << \textcolor{stringliteral}{"{}No. of scores"{}}<< setw(15)<< \textcolor{stringliteral}{"{}Average Score"{}} << setw(20) << \textcolor{stringliteral}{"{}Grade"{}} << setw(30) << \textcolor{stringliteral}{"{}Marks in each subject "{}} << endl;}
+\DoxyCodeLine{34             outfile<<\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<endl;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36             flag2++;}
+\DoxyCodeLine{37         \}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39         \textcolor{comment}{// writing data to file}}
+\DoxyCodeLine{40         outfile << left << setw(25) << studentName << setw(15)<< numOfSub << setw(15) <<fixed<< setprecision(2)<< avgMarks << setw(20)<< grade ;}
+\DoxyCodeLine{41         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < marksArr.size(); i++)\{}
+\DoxyCodeLine{42             outfile << left << setw(5) << marksArr[i] ;}
+\DoxyCodeLine{43         \}}
+\DoxyCodeLine{44         outfile << endl;}
+\DoxyCodeLine{45     \}}
+\DoxyCodeLine{46 \}}
+
+\end{DoxyCode}

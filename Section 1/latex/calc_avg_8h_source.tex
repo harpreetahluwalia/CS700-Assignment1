@@ -1,0 +1,73 @@
+\hypertarget{calc_avg_8h_source}{}\doxysection{calc\+Avg.\+h}
+\mbox{\hyperlink{calc_avg_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{calc_grade_8h}{calcGrade.h}}"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{space_index_8h}{spaceIndex.h}}"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{write_to_file_8h}{writeToFile.h}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{15 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{30 \textcolor{keywordtype}{void} \mbox{\hyperlink{calc_avg_8h_aea988c063b6c0981deb51d27647c5072}{calcAvg}}(\textcolor{keywordtype}{string} line, ifstream\& myfile, \textcolor{keywordtype}{string} name[], \textcolor{keywordtype}{int} i)\{}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keywordflow}{while} ( getline (myfile,line) )          \textcolor{comment}{// reading data line by line}}
+\DoxyCodeLine{33     \{}
+\DoxyCodeLine{34         \textcolor{keywordtype}{string} tempStr;}
+\DoxyCodeLine{35         \textcolor{keywordtype}{string} studentName;}
+\DoxyCodeLine{36         \textcolor{keywordtype}{int} numOfSub = 0;}
+\DoxyCodeLine{37         \textcolor{keywordtype}{float} marks = 0;}
+\DoxyCodeLine{38         \textcolor{keywordtype}{string} grade;}
+\DoxyCodeLine{39         \textcolor{keywordtype}{int} sIndex = 0;}
+\DoxyCodeLine{40         \textcolor{keywordtype}{int} flag = 0;}
+\DoxyCodeLine{41         std::vector<int> marksArr;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         tempStr = line;         \textcolor{comment}{// storing read line to temporary string variable tempStr}}
+\DoxyCodeLine{44         \textcolor{keywordtype}{bool} dot = \textcolor{keyword}{true};}
+\DoxyCodeLine{45         \textcolor{keywordflow}{while} (dot)\{            \textcolor{comment}{// creating a loop while boolean variable dot is true}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47             sIndex = \mbox{\hyperlink{space_index_8h_a9f6272c58a10f8fafcf1f82e13555a76}{spaceIndex}}(tempStr);  \textcolor{comment}{// calling spaceIndex function to get the index of first space in the given string.}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49             \textcolor{keywordtype}{string} splitString;}
+\DoxyCodeLine{50             splitString = tempStr.substr(0,sIndex); \textcolor{comment}{// creating substring till the first space index}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52             \textcolor{keywordflow}{if} (sIndex == 0) \{}
+\DoxyCodeLine{53                 splitString = tempStr.substr(0);}
+\DoxyCodeLine{54                 dot = \textcolor{keyword}{false};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56             \textcolor{comment}{// if space index is 0 i.e. if there is no space in the given string, it will trigger boolean variable "{}dot"{}}}
+\DoxyCodeLine{57             \textcolor{comment}{// and treat it as last iteration of the loop}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59             \}}
+\DoxyCodeLine{60             \textcolor{keywordflow}{if} (isalpha(splitString[0]))\{}
+\DoxyCodeLine{61                 studentName = studentName + \textcolor{stringliteral}{"{} "{}} + splitString;}
+\DoxyCodeLine{62                 tempStr.erase(0,sIndex+1);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64             \}}
+\DoxyCodeLine{65             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isdigit(splitString[0]))\{}
+\DoxyCodeLine{66                 \textcolor{keywordflow}{if} (flag == 0)\{}
+\DoxyCodeLine{67                     numOfSub = stoi(splitString);   \textcolor{comment}{// fetching no. of subject}}
+\DoxyCodeLine{68                     tempStr.erase(0,sIndex+1);}
+\DoxyCodeLine{69                     flag++;}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71                 \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73                     marksArr.push\_back(stoi(splitString));   \textcolor{comment}{// storing the marks of the student}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75                     marks = marks + stoi(splitString);   \textcolor{comment}{// adding marks of the student (will be used to get average later)}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77                     tempStr.erase(0,sIndex+1);   \textcolor{comment}{// erasing the temporary string till space index}}
+\DoxyCodeLine{78                 \}}
+\DoxyCodeLine{79             \}}
+\DoxyCodeLine{80         \}}
+\DoxyCodeLine{81         \textcolor{keywordtype}{float} avgMarks = marks/numOfSub;  \textcolor{comment}{// calculating average marks}}
+\DoxyCodeLine{82         grade = \mbox{\hyperlink{calc_grade_8h_a93a02708ad67715a93e7244746103c78}{calcGrade}}(marks/numOfSub); \textcolor{comment}{// calling calcGrade function to get the grade of the student based on the average marks.}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84         cout << left << setw(35) << studentName << setw(25) <<fixed<< setprecision(2) <<avgMarks<< setw(80)<< grade << endl;}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86         \mbox{\hyperlink{write_to_file_8h_a238c47c623f6204b91feb858fdcb016c}{writeToFile}}(studentName, numOfSub, marksArr, avgMarks, grade);  \textcolor{comment}{// calling writeToFile function to write the data to output file}}
+\DoxyCodeLine{87     \}}
+\DoxyCodeLine{88 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,134 @@
+\hypertarget{read_data_8h_source}{}\doxysection{read\+Data.\+h}
+\label{read_data_8h_source}\index{E:/C++/CodeBlocks Code/Assignment Sec 2/readData.h@{E:/C++/CodeBlocks Code/Assignment Sec 2/readData.h}}
+\mbox{\hyperlink{read_data_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <string>}                              \textcolor{comment}{// Including supporting liberaries}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{/*}}
+\DoxyCodeLine{20 \textcolor{comment}{ * creating Array variables with dynamic memory allocation as size of}}
+\DoxyCodeLine{21 \textcolor{comment}{ * the array depends on the input from the given file.}}
+\DoxyCodeLine{22 \textcolor{comment}{*/}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{25 \textcolor{keywordtype}{int} ** \mbox{\hyperlink{read_data_8h_acd03079ce6061ceccc06b89923a8874d}{globalArr}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{28 \textcolor{keywordtype}{float}* \mbox{\hyperlink{read_data_8h_a7495bce546dfadfe941c539ab4d4a129}{avgMarks}};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{31 std::vector<string> \mbox{\hyperlink{read_data_8h_ac48e0770e535fe061ff17c4e81b48e62}{studentName1}};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{40 \textcolor{keywordtype}{int} \mbox{\hyperlink{read_data_8h_a9f6272c58a10f8fafcf1f82e13555a76}{spaceIndex}}(\textcolor{keywordtype}{string} s)\{}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i<s.size(); i++)\{}
+\DoxyCodeLine{43         \textcolor{keywordflow}{if} (s[i] == \textcolor{charliteral}{' '})\{}
+\DoxyCodeLine{44             \textcolor{keywordflow}{return} i;}
+\DoxyCodeLine{45         \}}
+\DoxyCodeLine{46     \}}
+\DoxyCodeLine{47     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{48 \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{60 \textcolor{keywordtype}{int} \mbox{\hyperlink{read_data_8h_a109f096d0e0a80ddde2e5c543d079f9b}{readNumofSub}}(\textcolor{keywordtype}{string} splitString, \textcolor{keywordtype}{int} flag, \textcolor{keywordtype}{string}\& tempStr, \textcolor{keywordtype}{int} sIndex)\{}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{keywordtype}{int} numOfSub = stoi(splitString);}
+\DoxyCodeLine{63     tempStr.erase(0,sIndex+1);  \textcolor{comment}{// erasing the substring till the next space index.}}
+\DoxyCodeLine{64     \textcolor{keywordflow}{return} numOfSub;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{80 \textcolor{keywordtype}{int} \mbox{\hyperlink{read_data_8h_a98cc57c0183aaf7d5abf20e9f178d5c0}{readNumofStudents}}(\textcolor{keywordtype}{string} splitString, \textcolor{keywordtype}{int} flag, \textcolor{keywordtype}{string}\& tempStr, \textcolor{keywordtype}{int} sIndex)\{}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \textcolor{keywordtype}{int} numOfStudent = stoi(splitString);}
+\DoxyCodeLine{83     tempStr.erase(0,sIndex+1);}
+\DoxyCodeLine{84     \textcolor{keywordflow}{return} numOfStudent;}
+\DoxyCodeLine{85 \}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{101 \textcolor{keywordtype}{void} \mbox{\hyperlink{read_data_8h_a70b493dc8e70e3e29751f5d0e91ea5db}{readAndStoreData}}(\textcolor{keywordtype}{string} line, \textcolor{keywordtype}{int}\& numOfStudent, \textcolor{keywordtype}{int}\& numOfSub,ifstream\& myfile,\textcolor{keywordtype}{int} flag, \textcolor{keywordtype}{int} j)\{}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104     \textcolor{keywordflow}{while} ( getline (myfile,line) )}
+\DoxyCodeLine{105     \{}
+\DoxyCodeLine{106         \textcolor{keywordtype}{string} tempStr = line;     \textcolor{comment}{// storing line from input file to a temporary string variable.}}
+\DoxyCodeLine{107         \textcolor{keywordtype}{int} sIndex = 0;}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109         \textcolor{keywordtype}{string} studentName;}
+\DoxyCodeLine{110         \textcolor{keywordtype}{int} marks;}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112         \textcolor{keywordtype}{int} i =0;}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114         \textcolor{keywordtype}{bool} dot = \textcolor{keyword}{true};}
+\DoxyCodeLine{115         \textcolor{keywordflow}{while} (dot)\{       \textcolor{comment}{// creating a loop while boolean variable dot is true}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117             sIndex = \mbox{\hyperlink{read_data_8h_a9f6272c58a10f8fafcf1f82e13555a76}{spaceIndex}}(tempStr);     \textcolor{comment}{// calling spaceIndex function to get the index of first space in the given string.}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119             \textcolor{keywordtype}{string} splitString;}
+\DoxyCodeLine{120             splitString = tempStr.substr(0,sIndex);    \textcolor{comment}{// creating substring till the first space}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122             \textcolor{keywordflow}{if} (sIndex == 0) \{}
+\DoxyCodeLine{123                 \textcolor{keywordflow}{if} (tempStr.size() < 4)\{}
+\DoxyCodeLine{124                     splitString = tempStr.substr(0);}
+\DoxyCodeLine{125                     dot = \textcolor{keyword}{false};}
+\DoxyCodeLine{126                 \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{127                     tempStr.erase(0,sIndex+1);}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129                 \}}
+\DoxyCodeLine{130                         \textcolor{comment}{// if space index is 0 i.e. if there is no space in the given string, it will trigger boolean variable "{}dot"{}}}
+\DoxyCodeLine{131                         \textcolor{comment}{// and treat it as last iteration of the loop}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133                 \}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135             \textcolor{keywordflow}{if} (flag == 0)\{}
+\DoxyCodeLine{136                 numOfStudent = \mbox{\hyperlink{read_data_8h_a98cc57c0183aaf7d5abf20e9f178d5c0}{readNumofStudents}}(splitString,flag, tempStr, sIndex);}
+\DoxyCodeLine{137                 flag++;}
+\DoxyCodeLine{138                 \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(flag == 1)\{}
+\DoxyCodeLine{141                 numOfSub = \mbox{\hyperlink{read_data_8h_a109f096d0e0a80ddde2e5c543d079f9b}{readNumofSub}}(splitString,flag, tempStr, sIndex);}
+\DoxyCodeLine{142                 flag++;}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145                 \textcolor{comment}{/* now that we have fetched the values of no. of students and no. of subjects}}
+\DoxyCodeLine{146 \textcolor{comment}{                 * we will dynamically allocate memory to the arrays to store marks and average marks.}}
+\DoxyCodeLine{147 \textcolor{comment}{                */}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149                 \mbox{\hyperlink{read_data_8h_acd03079ce6061ceccc06b89923a8874d}{globalArr}} = \textcolor{keyword}{new} \textcolor{keywordtype}{int}*[numOfStudent];}
+\DoxyCodeLine{150                 \textcolor{keywordflow}{for}(i = 0; i < numOfStudent; i++)}
+\DoxyCodeLine{151                 \mbox{\hyperlink{read_data_8h_acd03079ce6061ceccc06b89923a8874d}{globalArr}}[i] = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[numOfSub];}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153                 \mbox{\hyperlink{read_data_8h_a7495bce546dfadfe941c539ab4d4a129}{avgMarks}} = \textcolor{keyword}{new} \textcolor{keywordtype}{float}[numOfSub];}
+\DoxyCodeLine{154                 \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{155             \}}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isalpha(splitString[0]))\{}
+\DoxyCodeLine{158                     \textcolor{comment}{// if given split string is alphabet, it will store it's value to studentName variable and concatenate it}}
+\DoxyCodeLine{159                     \textcolor{comment}{// with space delimiter throughout inner most loop making it "{}First + Middle + Last name"{}.}}
+\DoxyCodeLine{160                     \textcolor{comment}{// it also erases from tempStr after reading and storing to studentName variable.}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162                 studentName = studentName + \textcolor{stringliteral}{"{} "{}} + splitString;}
+\DoxyCodeLine{163                 tempStr.erase(0,sIndex+1);}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165             \}}
+\DoxyCodeLine{166             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isdigit(splitString[0]))\{}
+\DoxyCodeLine{167                 marks = marks + stoi(splitString);}
+\DoxyCodeLine{168                 tempStr.erase(0,sIndex+1);}
+\DoxyCodeLine{169                                                             \textcolor{comment}{// if given split string is digit, it will store its value to marks array}}
+\DoxyCodeLine{170                                                             \textcolor{comment}{// with index variable i and j which be incremented in inner and outer loop respectively.}}
+\DoxyCodeLine{171                                                             \textcolor{comment}{// it also erases from tempStr after reading and storing to array.}}
+\DoxyCodeLine{172                 \mbox{\hyperlink{read_data_8h_acd03079ce6061ceccc06b89923a8874d}{globalArr}}[j][i] = stoi(splitString);}
+\DoxyCodeLine{173                 i++;}
+\DoxyCodeLine{174             \}}
+\DoxyCodeLine{175         \}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177         j = j+1;        \textcolor{comment}{// incrementing j variable to be used inside loop.}}
+\DoxyCodeLine{178         \mbox{\hyperlink{read_data_8h_ac48e0770e535fe061ff17c4e81b48e62}{studentName1}}.push\_back(studentName);      \textcolor{comment}{// storing full student name (fetched in inner loop) to studentName1 array for further use.}}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180     \}}
+\DoxyCodeLine{181     myfile.close();   \textcolor{comment}{// closing the file}}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 \}}
+
+\end{DoxyCode}

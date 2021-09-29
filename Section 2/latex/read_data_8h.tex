@@ -1,0 +1,170 @@
+\hypertarget{read_data_8h}{}\doxysection{E\+:/\+C++/\+Code\+Blocks Code/\+Assignment Sec 2/read\+Data.h File Reference}
+\label{read_data_8h}\index{E:/C++/CodeBlocks Code/Assignment Sec 2/readData.h@{E:/C++/CodeBlocks Code/Assignment Sec 2/readData.h}}
+
+
+Includes method related to reading data from file such as number of subjects, no. of students, marks of the each exam of all students and storing its values for further use such as calculation of average and grade for each exam.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{read_data_8h_a9f6272c58a10f8fafcf1f82e13555a76}{space\+Index}} (string s)
+\begin{DoxyCompactList}\small\item\em calculates and returns the index of first space in the given string \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{read_data_8h_a109f096d0e0a80ddde2e5c543d079f9b}{read\+Numof\+Sub}} (string split\+String, int flag, string \&temp\+Str, int s\+Index)
+\begin{DoxyCompactList}\small\item\em Return the number of subjects from the given split string and erase the substring till the next space index. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{read_data_8h_a98cc57c0183aaf7d5abf20e9f178d5c0}{read\+Numof\+Students}} (string split\+String, int flag, string \&temp\+Str, int s\+Index)
+\begin{DoxyCompactList}\small\item\em Return the number of Students from the given split string and erase the substring till the next space index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{read_data_8h_a70b493dc8e70e3e29751f5d0e91ea5db}{read\+And\+Store\+Data}} (string line, int \&num\+Of\+Student, int \&num\+Of\+Sub, ifstream \&myfile, int flag, int j)
+\begin{DoxyCompactList}\small\item\em It reads data from given file line by line and stores the data such as number of students, number of subjects, student names and marks of student from each subject. This data would be used later on to calculate further required details such as average marks and grade. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$$\ast$ \mbox{\hyperlink{read_data_8h_acd03079ce6061ceccc06b89923a8874d}{global\+Arr}}
+\begin{DoxyCompactList}\small\item\em 2D Array variable that stores marks of student in each subject, created with dynamic memory allocation as size of the array depends on the input from the given file. \end{DoxyCompactList}\item 
+float $\ast$ \mbox{\hyperlink{read_data_8h_a7495bce546dfadfe941c539ab4d4a129}{avg\+Marks}}
+\begin{DoxyCompactList}\small\item\em avg\+Marks array that stores average marks of the student, created with dynamic memory allocation as size of the array depends on the input from the given file. \end{DoxyCompactList}\item 
+std\+::vector$<$ string $>$ \mbox{\hyperlink{read_data_8h_ac48e0770e535fe061ff17c4e81b48e62}{student\+Name1}}
+\begin{DoxyCompactList}\small\item\em student\+Name1 dynamic vector to store names of the students. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Includes method related to reading data from file such as number of subjects, no. of students, marks of the each exam of all students and storing its values for further use such as calculation of average and grade for each exam. 
+
+\begin{DoxyAuthor}{Author}
+Harpreet Singh 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+26/09/2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{read_data_8h_a70b493dc8e70e3e29751f5d0e91ea5db}\label{read_data_8h_a70b493dc8e70e3e29751f5d0e91ea5db}} 
+\index{readData.h@{readData.h}!readAndStoreData@{readAndStoreData}}
+\index{readAndStoreData@{readAndStoreData}!readData.h@{readData.h}}
+\doxysubsubsection{\texorpdfstring{readAndStoreData()}{readAndStoreData()}}
+{\footnotesize\ttfamily void read\+And\+Store\+Data (\begin{DoxyParamCaption}\item[{string}]{line,  }\item[{int \&}]{num\+Of\+Student,  }\item[{int \&}]{num\+Of\+Sub,  }\item[{ifstream \&}]{myfile,  }\item[{int}]{flag,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+
+
+It reads data from given file line by line and stores the data such as number of students, number of subjects, student names and marks of student from each subject. This data would be used later on to calculate further required details such as average marks and grade. 
+
+Method \+: read\+And\+Store\+Data \begin{DoxyAuthor}{Author}
+Harpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em line} & a string variable holding line read from file \\
+\hline
+{\em num\+Ofstudent} & Number of students which is passed by reference. \\
+\hline
+{\em num\+Of\+Sub} & Number of Subjects which is passed by reference. \\
+\hline
+{\em myfile} & object of the filestream \\
+\hline
+{\em flag} & an integer flag variable \\
+\hline
+{\em j} & an integer variable used in loop \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{read_data_8h_a98cc57c0183aaf7d5abf20e9f178d5c0}\label{read_data_8h_a98cc57c0183aaf7d5abf20e9f178d5c0}} 
+\index{readData.h@{readData.h}!readNumofStudents@{readNumofStudents}}
+\index{readNumofStudents@{readNumofStudents}!readData.h@{readData.h}}
+\doxysubsubsection{\texorpdfstring{readNumofStudents()}{readNumofStudents()}}
+{\footnotesize\ttfamily int read\+Numof\+Students (\begin{DoxyParamCaption}\item[{string}]{split\+String,  }\item[{int}]{flag,  }\item[{string \&}]{temp\+Str,  }\item[{int}]{s\+Index }\end{DoxyParamCaption})}
+
+
+
+Return the number of Students from the given split string and erase the substring till the next space index. 
+
+Method \+: read\+Num\+Of\+Students \begin{DoxyAuthor}{Author}
+Harpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em split\+String} & It holds split string till the first space index. \\
+\hline
+{\em flag} & an integer flag variable \\
+\hline
+{\em temp\+Str} & It holds address of temporary string \\
+\hline
+{\em s\+Index} & It holds space index in the string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{read_data_8h_a109f096d0e0a80ddde2e5c543d079f9b}\label{read_data_8h_a109f096d0e0a80ddde2e5c543d079f9b}} 
+\index{readData.h@{readData.h}!readNumofSub@{readNumofSub}}
+\index{readNumofSub@{readNumofSub}!readData.h@{readData.h}}
+\doxysubsubsection{\texorpdfstring{readNumofSub()}{readNumofSub()}}
+{\footnotesize\ttfamily int read\+Numof\+Sub (\begin{DoxyParamCaption}\item[{string}]{split\+String,  }\item[{int}]{flag,  }\item[{string \&}]{temp\+Str,  }\item[{int}]{s\+Index }\end{DoxyParamCaption})}
+
+
+
+Return the number of subjects from the given split string and erase the substring till the next space index. 
+
+Method \+: read\+Numof\+Sub \begin{DoxyAuthor}{Author}
+Harpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em split\+String} & It holds split string till the first space index. \\
+\hline
+{\em flag} & an integer flag variable \\
+\hline
+{\em temp\+Str} & It holds address of temporary string \\
+\hline
+{\em s\+Index} & It holds space index in the string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{read_data_8h_a9f6272c58a10f8fafcf1f82e13555a76}\label{read_data_8h_a9f6272c58a10f8fafcf1f82e13555a76}} 
+\index{readData.h@{readData.h}!spaceIndex@{spaceIndex}}
+\index{spaceIndex@{spaceIndex}!readData.h@{readData.h}}
+\doxysubsubsection{\texorpdfstring{spaceIndex()}{spaceIndex()}}
+{\footnotesize\ttfamily int space\+Index (\begin{DoxyParamCaption}\item[{string}]{s }\end{DoxyParamCaption})}
+
+
+
+calculates and returns the index of first space in the given string 
+
+Method \+: space\+Index \begin{DoxyAuthor}{Author}
+Harpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em s} & string variable where space index will be found \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{read_data_8h_a7495bce546dfadfe941c539ab4d4a129}\label{read_data_8h_a7495bce546dfadfe941c539ab4d4a129}} 
+\index{readData.h@{readData.h}!avgMarks@{avgMarks}}
+\index{avgMarks@{avgMarks}!readData.h@{readData.h}}
+\doxysubsubsection{\texorpdfstring{avgMarks}{avgMarks}}
+{\footnotesize\ttfamily float$\ast$ avg\+Marks}
+
+
+
+avg\+Marks array that stores average marks of the student, created with dynamic memory allocation as size of the array depends on the input from the given file. 
+
+\mbox{\Hypertarget{read_data_8h_acd03079ce6061ceccc06b89923a8874d}\label{read_data_8h_acd03079ce6061ceccc06b89923a8874d}} 
+\index{readData.h@{readData.h}!globalArr@{globalArr}}
+\index{globalArr@{globalArr}!readData.h@{readData.h}}
+\doxysubsubsection{\texorpdfstring{globalArr}{globalArr}}
+{\footnotesize\ttfamily int$\ast$$\ast$ global\+Arr}
+
+
+
+2D Array variable that stores marks of student in each subject, created with dynamic memory allocation as size of the array depends on the input from the given file. 
+
+\mbox{\Hypertarget{read_data_8h_ac48e0770e535fe061ff17c4e81b48e62}\label{read_data_8h_ac48e0770e535fe061ff17c4e81b48e62}} 
+\index{readData.h@{readData.h}!studentName1@{studentName1}}
+\index{studentName1@{studentName1}!readData.h@{readData.h}}
+\doxysubsubsection{\texorpdfstring{studentName1}{studentName1}}
+{\footnotesize\ttfamily std\+::vector$<$string$>$ student\+Name1}
+
+
+
+student\+Name1 dynamic vector to store names of the students. 
+
